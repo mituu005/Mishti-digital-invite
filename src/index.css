@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-baloo: 'Baloo 2', cursive;
+    --font-rozha: 'Rozha One', serif;
+    --font-yatra: 'Yatra One', cursive;
+    --font-tiro: 'Tiro Devanagari Hindi', serif;
+    --font-poppins: 'Poppins', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-baloo), sans-serif;
+    color: #4A3E3D;
+    background-color: #FFF7F9;
+    background-image: 
+      radial-gradient(#FDE2E8 1.5px, transparent 1.5px),
+      radial-gradient(#FEF3C7 1.5px, #FFF7F9 1.5px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-rozha {
+  font-family: 'Rozha One', serif;
+}
+
+.font-yatra {
+  font-family: 'Yatra One', cursive;
+}
+
+.font-baloo {
+  font-family: 'Baloo 2', cursive;
+}
+
+.font-tiro {
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom Soft Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes floatButterfly {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(15px, -20px) scale(1.05) rotate(6deg);
+  }
+  50% {
+    transform: translate(30px, -8px) scale(0.98) rotate(-4deg);
+  }
+  75% {
+    transform: translate(15px, -25px) scale(1.02) rotate(4deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(244, 114, 182, 0.45), 0 0 50px rgba(254, 240, 138, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(244, 114, 182, 0.75), 0 0 70px rgba(254, 240, 138, 0.55);
+  }
+}
+
+@keyframes swayToran {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1.2deg);
+  }
+}
+
+@keyframes sparkleSpin {
+  0% {
+    transform: rotate(0deg) scale(0.85);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.85);
+    opacity: 0.6;
+  }
+}
+
+@keyframes petalDrift {
+  0% {
+    transform: translateY(-5%) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(105vh) translateX(40px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-butterfly {
+  animation: floatButterfly 7s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: swayToran 5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.animate-sparkle {
+  animation: sparkleSpin 3s linear infinite;
+}
+
+/* Floral Scalloped Frame for Mishti's photo */
+.scalloped-photo-border {
+  position: relative;
+  border-radius: 9999px;
+  padding: 10px;
+  background: linear-gradient(135deg, #F472B6, #FBBF24, #C084FC, #F472B6);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism Pastel Card */
+.pastel-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(253, 226, 236, 0.95);
+  box-shadow: 0 15px 35px -5px rgba(244, 114, 182, 0.15), 0 8px 16px -6px rgba(251, 191, 36, 0.1);
+}
+
+.pastel-card-gold {
+  background: linear-gradient(145deg, #FFFFFF, #FFF9FA);
+  border: 2px solid #FCD34D;
+  box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.18), 0 0 0 4px #FEF3C7;
+}
+
+/* Envelope 3D Fold Effects */
+.perspective-1000 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF0F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #F472B6;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #EC4899;
+}
